@@ -47,12 +47,15 @@ resource "google_compute_region_instance_group_manager" "web_rigm1" {
   base_instance_name        = "ubuntu-web-rigm"
   region                    = "${var.region}"
   distribution_policy_zones = "${var.igm_zones}"
-  target_size               = "2"
+  wait_for_instances        = true
+
+  target_size = "2"
 }
 
 // with a datasource, you can get more information that you normally wouldn't be able to
 // for example: instances/instance names isn't one of the argument references for rigm
 // https://www.terraform.io/docs/providers/google/d/datasource_compute_region_instance_group.html
 data "google_compute_region_instance_group" "rigm1_data_source" {
+  name      = "${google_compute_region_instance_group_manager.web_rigm1.name}"
   self_link = "${google_compute_region_instance_group_manager.web_rigm1.instance_group}"
 }
