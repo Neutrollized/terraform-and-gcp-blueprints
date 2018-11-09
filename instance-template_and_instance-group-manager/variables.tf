@@ -2,6 +2,7 @@
 # provider variables
 #-----------------------
 variable "project_id" {}
+
 variable "credentials_file_path" {}
 
 variable "region" {
@@ -30,6 +31,18 @@ variable "image_family" {
   default     = "ubuntu-minimal-1804-lts"
 }
 
-variable "public_key" {
-  default = "glen:ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDX6CRSh9aZdC5fiK+WmXpB269ZN/gRYp0EXWZxucaE/W10hk+iVM1z0d5sDQSHcJ9CL7zIUTPS7Q3vf/RFwoK+EmboW2JV1B4QnCSpeboD+hHGygtqoznNTHqhI09v8/O8woYd1Uzuvhv9rdyI8S/puY+DDTyjBi3T5CeACdtdpgvtp700pwigvUS6lbjE9ocJRZHT+J7V30Fc01E6uwwFZEurBBNiotTpEcYyxa8je49y0MAumxeHgxujGatOcXN/3QGNq4FiO8it46jDLhSHPJzYwIZ/v+hLokL9WCAbU5YlFSeUhsm31RPvr3lkzADQYYkIvtXKEay9NEZ3eZxp glen"
+variable "ssh_user" {}
+
+variable "public_key_file_path" {
+  description = "public key of ssh_user - can be string or as a file depending on how you want to provide it"
+
+  // default = "glen:ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDX6CRSh9aZdC5fiK+WmXpB269ZN/gRYp0EXWZxucaE/W10hk+iVM1z0d5sDQSHcJ9CL7zIUTPS7Q3vf/RFwoK+EmboW2JV1B4QnCSpeboD+hHGygtqoznNTHqhI09v8/O8woYd1Uzuvhv9rdyI8S/puY+DDTyjBi3T5CeACdtdpgvtp700pwigvUS6lbjE9ocJRZHT+J7V30Fc01E6uwwFZEurBBNiotTpEcYyxa8je49y0MAumxeHgxujGatOcXN/3QGNq4FiO8it46jDLhSHPJzYwIZ/v+hLokL9WCAbU5YlFSeUhsm31RPvr3lkzADQYYkIvtXKEay9NEZ3eZxp glen"
+}
+
+#---------------------------------------------
+# (region) instance group manager variables
+#---------------------------------------------
+variable "igm_zones" {
+  type    = "list"
+  default = ["us-central1-a", "us-central1-c"]
 }
