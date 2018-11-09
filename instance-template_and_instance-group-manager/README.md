@@ -1,7 +1,9 @@
 # Instance Template & Instance Group Manager
 
 [Compute Instance Template](https://www.terraform.io/docs/providers/google/r/compute_instance_template.html)
+
 [Compute Instance Group Manager](https://www.terraform.io/docs/providers/google/r/compute_instance_group_manager.html)
+
 [Compute Region (multi-zone) Instance Group Manager](https://www.terraform.io/docs/providers/google/r/compute_region_instance_group_manager.html)
 
 
