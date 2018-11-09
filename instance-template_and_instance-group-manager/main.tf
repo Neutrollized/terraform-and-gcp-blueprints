@@ -51,7 +51,7 @@ resource "google_compute_region_instance_group_manager" "web_rigm1" {
 }
 
 // with a datasource, you can get more information that you normally wouldn't be able to
-// for example: rigm only exports fingerprint, instance_group and self_link
+// for example: instances/instance names isn't one of the argument references for rigm
 // https://www.terraform.io/docs/providers/google/d/datasource_compute_region_instance_group.html
 data "google_compute_region_instance_group" "rigm1_data_source" {
   self_link = "${google_compute_region_instance_group_manager.web_rigm1.instance_group}"
