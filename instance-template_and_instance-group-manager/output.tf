@@ -2,8 +2,9 @@ output "instance_template" {
   value = "${google_compute_instance_template.web_template.*.self_link}"
 }
 
+// like the above, except output is not as a list, but a string (first element)
 output "region_instance_group" {
-  value = "${element(concat(google_compute_region_instance_group_manager.web_rigm1.*.instance_group,list("")), 0)}"
+  value = "${element(google_compute_region_instance_group_manager.web_rigm1.*.instance_group, 0)}"
 }
 
 // when you output data variables, they must be 4 parts:
