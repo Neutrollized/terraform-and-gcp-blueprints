@@ -49,3 +49,7 @@ resource "google_compute_region_instance_group_manager" "web_rigm1" {
   distribution_policy_zones = "${var.igm_zones}"
   target_size               = "2"
 }
+
+data "google_compute_region_instance_group" "rigm1_data_source" {
+  self_link = "${google_compute_region_instance_group_manager.web_rigm1.instance_group}"
+}
