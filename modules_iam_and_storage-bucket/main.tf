@@ -1,10 +1,29 @@
-// random_id resource will create an extra string of characters to append to my bucket name
-// to make it unique
+resource "google_service_account" "storage_object_admin" {
+  account_id   = "storage-object-admin"
+  display_name = "Storage Object Admin"
+}
+
+resource "google_service_account_key" "storage_object_admin_key" {
+  service_account_id = "${google_service_account.storage_object_admin.name}"
+  public_key_type    = "TYPE_X509_PEM_FILE"
+}
+
+resource "google_storage_bucket_iam_binding" "my_bucket_storage_object_admin" {
+  bucket = "${module.my_bucket.bucket_name}"
+  role   = "roles/storage.objectAdmin"
+
+  members = [
+    "serviceAccount:${google_service_account.storage_object_admin.email}",
+  ]
+}
+
+// random_id resource will create an extra string of characters
+// to append to my bucket name to make it unique
 resource random_id "default" {
   byte_length = 6
 }
 
-module "bootstrap_bucket" {
+module "my_bucket" {
   // source = "git@github.com:dansible/terraform-google-storage-bucket.git?ref=v1.1.0"
   source  = "dansible/storage-bucket/google"
   version = "1.1.0"
@@ -28,7 +47,7 @@ resource "google_storage_bucket_object" "folders" {
   count   = "${length(local.folders)}"
   name    = "${local.folders[count.index]}/"
   content = "${local.folders[count.index]}"
-  bucket  = "${module.bootstrap_bucket.bucket_name}"
+  bucket  = "${module.my_bucket.bucket_name}"
 }
 
 // upload files
@@ -36,11 +55,11 @@ resource "google_storage_bucket_object" "folders" {
 resource "google_storage_bucket_object" "picture1" {
   name   = "dog.jpg"
   source = "./files/Domestication.jpg"
-  bucket = "${module.bootstrap_bucket.bucket_name}"
+  bucket = "${module.my_bucket.bucket_name}"
 }
 
 resource "google_storage_bucket_object" "textfile1" {
   name    = "notes.txt"
   content = "random stuff..."
-  bucket  = "${module.bootstrap_bucket.bucket_name}"
+  bucket  = "${module.my_bucket.bucket_name}"
 }
