@@ -66,6 +66,7 @@ data "google_compute_instance" "gce_data_source" {
 }
 */
 
+
 /*
 // region instance group manager is slightly more complicated
 // and also less available outputs from datasource
