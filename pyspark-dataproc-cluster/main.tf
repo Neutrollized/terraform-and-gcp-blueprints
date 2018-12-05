@@ -104,6 +104,7 @@ resource "google_dataproc_cluster" "my_pyspark_cluster" {
     software_config {
       image_version = "${var.sw_image_version}"
 
+      # https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/cluster-properties
       override_properties = {
         "dataproc:dataproc.allow.zero.workers" = "true"
       }
