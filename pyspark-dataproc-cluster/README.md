@@ -8,6 +8,11 @@
 Create a VPC in which a PySpark [Dataproc](https://cloud.google.com/dataproc/) cluster will be created.  We will once again use the [Google Storage Bucket Module](https://registry.terraform.io/modules/dansible/storage-bucket/google/1.1.0) to create the Dataproc Staging bucket.  The cluster will be provisioned and then initialized using one of the myraid of [Initialization Actions](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/init-actions) avaiable on GCP's GitHub repo (as well as their Storage Bucket).
 
 
+## Note
+
+The Dataproc clusters/instances are stateless, and as long as you don't destroy your Dataproc staging bucket, your work will be saved there and you shouldn't lose any work.
+
+
 ```
 var.bucket_name
   Enter a value: dp-staging
