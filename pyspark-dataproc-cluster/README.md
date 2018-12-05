@@ -10,7 +10,7 @@ Create a VPC in which a PySpark [Dataproc](https://cloud.google.com/dataproc/) c
 
 ## Note
 
-The Dataproc clusters/instances are stateless, and as long as you don't destroy your Dataproc staging bucket, your work will be saved there and you shouldn't lose any work.
+The Dataproc clusters/instances are stateless, and as long as you don't destroy your Dataproc staging bucket, your work will be saved there and you shouldn't lose any work (hence `force_destroy` is set to `"false"` -- bucket will not be destroyed if it contains objects)
 
 
 ```
@@ -149,7 +149,7 @@ Terraform will perform the following actions:
 
   + module.my_dataproc_staging_bucket.google_storage_bucket.bucket
       id:                                                                                          <computed>
-      force_destroy:                                                                               "true"
+      force_destroy:                                                                               "false"
       labels.%:                                                                                    "1"
       labels.managed-by:                                                                           "terraform"
       location:                                                                                    "US-CENTRAL1"
