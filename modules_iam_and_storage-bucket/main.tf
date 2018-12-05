@@ -17,10 +17,11 @@ resource "google_storage_bucket_iam_binding" "my_bucket_storage_object_admin" {
   ]
 }
 
-// random_id resource will create an extra string of characters
+// random_string resource will create an extra string of characters
 // to append to my bucket name to make it unique
-resource random_id "default" {
-  byte_length = 6
+resource random_string "default" {
+  length = 8
+  special = false
 }
 
 module "my_bucket" {
@@ -28,7 +29,7 @@ module "my_bucket" {
   source  = "dansible/storage-bucket/google"
   version = "1.1.0"
 
-  bucket_name        = "${lower(format("%s-%s", var.bucket_name, random_id.default.b64_url))}"
+  bucket_name        = "${lower(format("%s-%s", var.bucket_name, random_string.default.result))}"
   project            = "${var.project_id}"
   location           = "${var.region}"
   storage_class      = "REGIONAL"
