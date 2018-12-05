@@ -20,7 +20,7 @@ resource "google_storage_bucket_iam_binding" "my_bucket_storage_object_admin" {
 // random_string resource will create an extra string of characters
 // to append to my bucket name to make it unique
 resource random_string "default" {
-  length = 8
+  length  = 8
   special = false
 }
 
@@ -34,7 +34,7 @@ module "my_bucket" {
   location           = "${var.region}"
   storage_class      = "REGIONAL"
   default_acl        = "projectPrivate"
-  force_destroy      = "true"
+  force_destroy      = "${var.force_destroy}"
   logging_enabled    = false
   versioning_enabled = true
 }

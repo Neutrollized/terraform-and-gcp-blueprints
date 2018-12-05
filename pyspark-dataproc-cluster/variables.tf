@@ -18,6 +18,11 @@ variable "zone" {
 #--------------------------
 variable "bucket_name" {}
 
+variable "force_destroy" {
+  description = "If false, bucket will not be deleted if it contains objects"
+  default     = "false"
+}
+
 #-----------------------------
 # Dataproc cluster variables
 #-----------------------------

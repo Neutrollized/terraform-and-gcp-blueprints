@@ -58,7 +58,7 @@ module "my_dataproc_staging_bucket" {
   location           = "${var.region}"
   storage_class      = "REGIONAL"
   default_acl        = "projectPrivate"
-  force_destroy      = "false"
+  force_destroy      = "${var.force_destroy}"
   logging_enabled    = false
   versioning_enabled = true
 }
