@@ -22,8 +22,35 @@ data.google_compute_image.my_image: Refreshing state...
 An execution plan has been generated and is shown below.
 Resource actions are indicated with the following symbols:
   + create
+ <= read (data resources)
 
 Terraform will perform the following actions:
+
+ <= data.google_compute_instance_group.igm1_data_source
+      id:                                                  <computed>
+      description:                                         <computed>
+      instances.#:                                         <computed>
+      named_port.#:                                        <computed>
+      network:                                             <computed>
+      project:                                             <computed>
+      self_link:                                           "${google_compute_instance_group_manager.web_igm1.instance_group}"
+      size:                                                <computed>
+      zone:                                                <computed>
+
+  + google_compute_instance_group_manager.web_igm1
+      id:                                                  <computed>
+      base_instance_name:                                  "ubuntu-web-igm"
+      fingerprint:                                         <computed>
+      instance_group:                                      <computed>
+      instance_template:                                   "${google_compute_instance_template.web_template.self_link}"
+      name:                                                "ubuntu-web-igm"
+      project:                                             <computed>
+      self_link:                                           <computed>
+      target_size:                                         "2"
+      update_strategy:                                     "REPLACE"
+      version.#:                                           <computed>
+      wait_for_instances:                                  "true"
+      zone:                                                "us-central1-c"
 
   + google_compute_instance_template.web_template
       id:                                                  <computed>
@@ -36,9 +63,13 @@ Terraform will perform the following actions:
       disk.0.disk_type:                                    <computed>
       disk.0.interface:                                    <computed>
       disk.0.mode:                                         <computed>
-      disk.0.source_image:                                 "https://www.googleapis.com/compute/v1/projects/ubuntu-os-cloud/global/images/ubuntu-minimal-1804-bionic-v20181030"
+      disk.0.source_image:                                 "https://www.googleapis.com/compute/v1/projects/ubuntu-os-cloud/global/images/ubuntu-minimal-1804-bionic-v20181203"
       disk.0.type:                                         <computed>
       instance_description:                                "Ubuntu Xenial minimal instance with Apache2"
+      labels.%:                                            "3"
+      labels.environment:                                  "test"
+      labels.osfamily:                                     "linux"
+      labels.osname:                                       "ubuntu-1604"
       machine_type:                                        "f1-micro"
       metadata.%:                                          "1"
       metadata.sshKeys:                                    "glen:ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDX6CRSh9aZdC5fiK+WmXpB269ZN/gRYp0EXWZxucaE/W10hk+iVM1z0d5sDQSHcJ9CL7zIUTPS7Q3vf/RFwoK+EmboW2JV1B4QnCSpeboD+hHGygtqoznNTHqhI09v8/O8woYd1Uzuvhv9rdyI8S/puY+DDTyjBi3T5CeACdtdpgvtp700pwigvUS6lbjE9ocJRZHT+J7V30Fc01E6uwwFZEurBBNiotTpEcYyxa8je49y0MAumxeHgxujGatOcXN/3QGNq4FiO8it46jDLhSHPJzYwIZ/v+hLokL9WCAbU5YlFSeUhsm31RPvr3lkzADQYYkIvtXKEay9NEZ3eZxp\n"
@@ -63,24 +94,6 @@ Terraform will perform the following actions:
       scheduling.0.preemptible:                            "false"
       self_link:                                           <computed>
       tags_fingerprint:                                    <computed>
-
-  + google_compute_region_instance_group_manager.web_rigm1
-      id:                                                  <computed>
-      base_instance_name:                                  "ubuntu-web-rigm"
-      distribution_policy_zones.#:                         "2"
-      distribution_policy_zones.3949927394:                "us-central1-a"
-      distribution_policy_zones.90274510:                  "us-central1-c"
-      fingerprint:                                         <computed>
-      instance_group:                                      <computed>
-      instance_template:                                   "${google_compute_instance_template.web_template.self_link}"
-      name:                                                "ubuntu-web-rigm"
-      project:                                             <computed>
-      region:                                              "us-central1"
-      self_link:                                           <computed>
-      target_size:                                         "2"
-      update_strategy:                                     "NONE"
-      version.#:                                           <computed>
-      wait_for_instances:                                  "false"
 
 
 Plan: 2 to add, 0 to change, 0 to destroy.
