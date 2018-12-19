@@ -23,11 +23,6 @@ variable "filestore_tier" {
 
 variable "filestore_sharename" {}
 
-#variable "filestore_vpc" {}
-#variable "filestore_subnetwork" {}
-#variable "filestore_subnetwork_gw" {}
-#variable "filestore_ip" {}
-
 #-----------------------------
 # Compute Engine variables
 #-----------------------------
