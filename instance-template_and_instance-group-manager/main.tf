@@ -1,6 +1,6 @@
 data "google_compute_image" "my_image" {
   project = "ubuntu-os-cloud"
-  family  = "ubuntu-minimal-1804-lts"
+  family  = "ubuntu-minimal-1604-lts"
 }
 
 // gcloud compute instance-templates create webserver-template
@@ -29,12 +29,14 @@ resource "google_compute_instance_template" "web_template" {
     access_config {}
   }
 
+  /*
   // optional, but if you wanted to add labels, this is how you would do it
   labels {
     environment = "test"
     osfamily    = "linux"
     osname      = "ubuntu-1604"
   }
+  */
 
   // add in ssh public key as metadata key/value pairs
   // https://cloud.google.com/compute/docs/instances/adding-removing-ssh-keys
