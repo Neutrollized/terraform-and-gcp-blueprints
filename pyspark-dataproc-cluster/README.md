@@ -5,7 +5,7 @@
 [GCP Dataproc Initialization Actions](https://github.com/GoogleCloudPlatform/dataproc-initialization-actions)
 
 
-Create a VPC in which a PySpark [Dataproc](https://cloud.google.com/dataproc/) cluster will be created.  We will once again use the [Google Storage Bucket Module](https://registry.terraform.io/modules/dansible/storage-bucket/google/1.1.0) to create the Dataproc Staging bucket.  The cluster will be provisioned and then initialized using one of the myraid of [Initialization Actions](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/init-actions) avaiable on GCP's GitHub repo (as well as their Storage Bucket).
+Create a VPC in which a PySpark [Dataproc](https://cloud.google.com/dataproc/) cluster will be created.  We will once again use the [Google Storage Bucket Module](https://registry.terraform.io/modules/dansible/storage-bucket/google/1.1.0) to create the Dataproc Staging bucket.  The cluster will be provisioned and then initialized using one of the myriad of [Initialization Actions](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/init-actions) avaiable on GCP's GitHub repo (as well as their Storage Bucket).
 
 
 ## Note
