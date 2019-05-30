@@ -3,6 +3,7 @@
 The Palo Alto Networks VM-Series next-generation firewall.  Wow, what a mouthful!  It's runs PAN-OS on a VM that you can provision in your cloud environment (in this case, GCP) that is both a very powerful and scalable solution.  You can learn more about it [here](https://www.youtube.com/watch?v=ly9830IL35Q) if you wish.
 
 Here's a diagram of how the setup/layout would generally look:
+
 <img width="261" alt="image" src="https://user-images.githubusercontent.com/30295405/41330798-57d56954-6e8a-11e8-8fe0-6954803b103b.png">
 
 
