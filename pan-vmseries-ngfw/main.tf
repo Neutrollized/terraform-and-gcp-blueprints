@@ -1,6 +1,3 @@
-######       This Terraform Template Builds a
-###       Load Balancer Sandwich with VM-Series in GCP
-
 #----------------------------------------------------------
 # Create bootstrap bucket for holding PA bootstrap config
 #----------------------------------------------------------
