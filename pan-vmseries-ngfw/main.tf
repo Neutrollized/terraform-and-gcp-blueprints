@@ -26,18 +26,6 @@ module "bootstrap_bucket" {
   versioning_enabled = true
 }
 
-/*
-module "bootstrap_bucket" {
-  source  = "./terraform-google-storage-bucket"
-  version = "0.1.7"
-
-  project_id    = "${var.project_id}"
-  environment   = "${var.environment}"
-  force_destroy = "true"
-  name          = "${var.bucket_name}"
-}
-*/
-
 # Storage bucket folders
 locals {
   folders = ["config", "license", "software", "content"]
@@ -297,7 +285,7 @@ resource "google_compute_instance" "webserver-1" {
     scopes = ["compute-rw"]
   }
 
-  metadata_startup_script = "${file("startup.sh")}"
+  metadata_startup_script = "${file("scripts/startup.sh")}"
 }
 
 resource "google_compute_instance" "webserver-2" {
@@ -320,7 +308,7 @@ resource "google_compute_instance" "webserver-2" {
     scopes = ["compute-rw"]
   }
 
-  metadata_startup_script = "${file("startup.sh")}"
+  metadata_startup_script = "${file("scripts/startup.sh")}"
 }
 
 resource "google_compute_instance_group" "us-ig1" {
