@@ -4,6 +4,13 @@
 #----------------------------------------------------------
 # Create bootstrap bucket for holding PA bootstrap config
 #----------------------------------------------------------
+// random_string resource will create an extra string of characters
+// to append to my bucket name to make it unique
+resource random_string "default" {
+  length  = 8
+  special = false
+}
+
 module "bootstrap_bucket" {
   // source = "git@github.com:dansible/terraform-google-storage-bucket.git?ref=v1.1.0"
   source  = "dansible/storage-bucket/google"

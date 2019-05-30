@@ -1,5 +1,5 @@
 output "bucket-name" {
-  value = "${module.bootstrap_bucket.name}"
+  value = "${module.bootstrap_bucket.bucket_name}"
 }
 
 output "firewall-name" {
