@@ -160,8 +160,6 @@ resource "google_compute_instance" "firewall" {
   metadata {
     // initconfig.txt will perform interface swap of VM-series on bootstrap
     mgmt-interface-swap = "enable"
-
-    // vmseries-bootstrap-gce-storagebucket = "${var.bootstrap_bucket_fw}"
     vmseries-bootstrap-gce-storagebucket = "${module.bootstrap_bucket.bucket_name}"
     serial-port-enable                   = true
     sshKeys                              = "${var.public_key}"
