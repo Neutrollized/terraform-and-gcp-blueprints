@@ -196,20 +196,14 @@ resource "google_compute_instance" "firewall" {
 
   // it takes time for the PAN vm-series firewall to warm-up and come online
   provisioner "local-exec" {
-    command = "sleep 210"
+    command = "sleep 180"
   }
-
-  /*
-  provisioner "local-exec" {
-    command = "while true; do printf '.'; sleep 5; ping -c 1 -W 1 ${self.network_interface.1.access_config.0.nat_ip} >/dev/null && break; done"
-  }
-  */
 }
 
 /*
-###########################################
-###################  ELB & ILB  LOAD BALANCER and WEB SERVER SETUP BELOW      #############
-######################################
+#----------------------
+# Load Balancers
+#----------------------
 
 resource "google_compute_global_address" "external-address" {
   name = "tf-external-address"
