@@ -11,15 +11,6 @@
         </permissions>
         <public-key>AAAAB3NzaC1yc2EAAAADAQABAAABAQDX6CRSh9aZdC5fiK+WmXpB269ZN/gRYp0EXWZxucaE/W10hk+iVM1z0d5sDQSHcJ9CL7zIUTPS7Q3vf/RFwoK+EmboW2JV1B4QnCSpeboD+hHGygtqoznNTHqhI09v8/O8woYd1Uzuvhv9rdyI8S/puY+DDTyjBi3T5CeACdtdpgvtp700pwigvUS6lbjE9ocJRZHT+J7V30Fc01E6uwwFZEurBBNiotTpEcYyxa8je49y0MAumxeHgxujGatOcXN/3QGNq4FiO8it46jDLhSHPJzYwIZ/v+hLokL9WCAbU5YlFSeUhsm31RPvr3lkzADQYYkIvtXKEay9NEZ3eZxp</public-key>
       </entry>
-      <entry name="ssumner">
-        <permissions>
-          <role-based>
-            <superuser>yes</superuser>
-          </role-based>
-        </permissions>
-        <public-key>c3NoLXJzYSBBQUFBQjNOemFDMXljMkVBQUFBREFRQUJBQUFCQVFDeHNWR0V0dGhWSVlzMTVpTnBtbGRTdm1mWWtkMjdLUUViYmEzRGlnY05LRXBMN0dBRWxuOS9CY3ZSTXFKSHlRTXh0ODJXcTQwRHZqTDQ3cFNYeDgxYkFZSklyYXNHQldrZ3loUDdoSmhiUVhLa2kwcTJHK0UreWtKa1pnZHFBREtVS0JtclJpdmtmL0ZnQ2hacEV1TUlPTElEd3RwSFliYTJJZkFnbkVHc2lqQ2F2UVZjOStWTzFyaHZuZXZZWFpsTkw0ODBmMUpaZWM0eDM3VjVLTzI1azQ5a1phSzVGMmhWaHloOHVvOWNKaXhFMEhJMHBmYlpRa0lDQXpCZlg5SmsxLys3eTNIYXBGSHBLcGpZQ0RTaWU4UEF5c0ZRUlIwelVpSWZSUjdNTU1wRmdsSlEzT0dGdG1iNlg1cHRDOXF3R0lkeHc5ODNraUlGbmNieUtDZ3Ygc3N1bW5lckBTSkNNQUNXMTFURzhXTAo=</public-key>
-        <phash>$1$kkorlkkw$UHzS3.UVvYEApMuQcKsqs.</phash>
-      </entry>
       <entry name="paloalto">
         <permissions>
           <role-based>
