@@ -159,7 +159,7 @@ resource "google_compute_instance" "firewall" {
   // Adding METADATA Key Value pairs to GCE VM 
   metadata {
     // initconfig.txt will perform interface swap of VM-series on bootstrap
-    mgmt-interface-swap = "enable"
+    mgmt-interface-swap                  = "enable"
     vmseries-bootstrap-gce-storagebucket = "${module.bootstrap_bucket.bucket_name}"
     serial-port-enable                   = true
     sshKeys                              = "${var.public_key}"
@@ -188,7 +188,7 @@ resource "google_compute_instance" "firewall" {
     initialize_params {
       image = "${var.image_fw}"
       size  = 60
-      type = "pd-ssd"
+      type  = "pd-ssd"
     }
   }
 

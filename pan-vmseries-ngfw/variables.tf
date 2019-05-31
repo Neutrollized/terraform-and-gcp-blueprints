@@ -44,6 +44,7 @@ variable "firewall_name" {
 variable "firewall_count" {
   default = 1
 }
+
 variable "image_fw" {
   # default = "Your_VM_Series_Image"
 
