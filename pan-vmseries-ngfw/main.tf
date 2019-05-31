@@ -190,9 +190,7 @@ resource "google_compute_instance" "firewall" {
     initialize_params {
       image = "${var.image_fw}"
       size  = 60
-      type  = "pd-standard"
-
-      //type = "pd-ssd"
+      type = "pd-ssd"
     }
   }
 
