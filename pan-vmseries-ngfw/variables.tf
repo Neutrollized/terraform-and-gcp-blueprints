@@ -38,7 +38,7 @@ variable "public_key" {
 
 // FIREWALL Variables
 variable "firewall_name" {
-  default = "firewall"
+  default = "pan-vm"
 }
 
 variable "firewall_count" {
