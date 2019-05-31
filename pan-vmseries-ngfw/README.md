@@ -7,7 +7,12 @@ Here's a diagram of how the setup/layout would generally look:
 <img width="261" alt="image" src="https://user-images.githubusercontent.com/30295405/41330798-57d56954-6e8a-11e8-8fe0-6954803b103b.png">
 
 
-## Note
+## Notes
+
+[bootstrap process](https://www.paloaltonetworks.com/documentation/81/virtualization/virtualization/bootstrap-the-vm-series-firewall/bootstrap-package#id88dce8d3-3665-4794-b7ed-0fd47581ebd2)
+
+[management interface swap in GCP](https://www.paloaltonetworks.com/documentation/81/virtualization/virtualization/set-up-the-vm-series-firewall-on-google-cloud-platform/deploy-the-vm-series-firewall-on-google-cloud/management-interface-mapping-for-google-internal-load-balancing)
+
 
 After deploying the resources in this blueprint, you will have to ssh in as `admin` to the external IP of your management interface/NIC using the ssh-key you created.  You should then receive the prompt below and can then set the admin password for the PAN-OS UI (go to https://`firewall-management-external-ips` where you can login) 
 
