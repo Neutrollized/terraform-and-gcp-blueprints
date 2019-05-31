@@ -154,7 +154,7 @@ resource "google_compute_instance" "firewall" {
   min_cpu_platform          = "${var.machine_cpu_fw}"
   can_ip_forward            = true
   allow_stopping_for_update = true
-  count                     = 1
+  count                     = "${var.firewall_count}"
 
   // Adding METADATA Key Value pairs to GCE VM 
   metadata {

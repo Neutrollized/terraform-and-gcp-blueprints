@@ -41,6 +41,9 @@ variable "firewall_name" {
   default = "firewall"
 }
 
+variable "firewall_count" {
+  default = 1
+}
 variable "image_fw" {
   # default = "Your_VM_Series_Image"
 
@@ -59,10 +62,9 @@ variable "machine_cpu_fw" {
   default = "Intel Skylake"
 }
 
-#variable "bootstrap_bucket_fw" {
-#  description = "Your_Bootstrap_Bucket_Name"
-#}
-
+// This is the typical order of interfaces: management, untrust (public), trust (private)
+// but if you want to put an ELB in front, the ELB load balances to interface_0
+// hence the swap between management and untrst interfaces
 variable "interface_0_name" {
   default = "management"
 }
