@@ -14,7 +14,7 @@ terraform apply -var 'project_id=my_project-1234' -var 'credentials_file_path=~/
 
 terraform destroy -var 'project_id=my_project-1234' -var 'credentials_file_path=~/my_credentials.json' -var 'ssh_user=glen' -var 'public_key_file_path=~/glen_rsa.pub' -var 'private_key_file_path=~/glen_rsa'
 ```
-(or better yet, put all that info in a `terraform.tfvars` file
+(or better yet, put all that info in a `terraform.tfvars` file)
 
 
 Additionally, you can also add:
